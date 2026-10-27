@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Кладбище — Green Fox Season</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <div id="hud">
+      <div id="score">🕯️ 0</div>
+    </div>
+    <div id="field"></div>
+    <div id="log" style="display: none;"></div>
+  </div>
+
+  <!-- ПОПАП -->
+  <div id="tooltip">
+    <div class="tt-title" id="tt-title"></div>
+    <div class="tt-desc" id="tt-desc"></div>
+    <button class="tt-btn" id="tt-close-btn">ОК</button>
+  </div>
+
+  <!-- СТАРТ -->
+  <div id="start-modal" class="modal-overlay active">
+    <div class="modal-window">
+      <div class="modal-title">КЛАДБИЩЕ</div>
+      <div class="modal-desc">Введите номер игрока</div>
+      <input type="number" id="player-id-input" min="1">
+      <button class="modal-btn" id="start-btn">Начать</button>
+    </div>
+  </div>
+
+  <!-- ПОРАЖЕНИЕ -->
+  <div id="gameover-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-title" style="color: #ff6b6b;">ИГРОК УМЕР НА КЛАДБИЩЕ</div>
+      <div class="modal-desc">
+        Игрок <span id="final-player-id">?</span><br>
+        Собрано свечей: <span id="final-score">0</span><br><br>
+        <span style="color: #cfcfcf;">Рекорд: <span id="final-max-score">0</span></span><br>
+        <span style="color: #cfcfcf;">Сыграно игр: <span id="final-games">0</span></span>
+      </div>
+      <button class="modal-btn" id="restart-btn">Попробовать снова</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/weapons.js"></script>
+  <script src="js/enemies.js"></script>
+  <script src="js/items.js"></script>
+  <script src="js/turn.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
